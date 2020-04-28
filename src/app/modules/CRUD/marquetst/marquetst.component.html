@@ -1,0 +1,101 @@
+<section id="section" class="container " style=" width: 100%;
+background-color: white; box-shadow: inset 0 0 0em gold, 0 0 1em rgb(155, 149, 149);" >
+<section class="container w-75">
+<br><br>
+  <form #f="ngForm" (ngSubmit)="addmarq()">
+    
+<h1 class="text-center">Ajouter</h1>
+    <div class="form-group"  [class.has-error]="nameControl.invalid && nameControl.touched">
+      <label for="name"> Name</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="users.name" name="name"
+      #nameControl="ngModel" >
+      <span class="help-block" *ngIf="nameControl.invalid && nameControl.touched">
+        name is required
+      </span>
+    </div>
+    <p *ngIf="nameControl.invalid && nameControl.touched" style="left: 40%; position: relative;">vous devez remplir le nom</p>
+   <!--  <div>valid:{{nameControl.valid}}</div>
+    <div>invalid:{{nameControl.invalid}}</div> <hr> -->
+    <!-- <div>pristine:{{f.pristine}}</div>
+    <div>dirty:{{f.dirty}}</div> <hr>
+    <div>touched:{{f.touched}}</div>
+    <div>untouched:{{f.untouched}}</div> -->
+
+    <div class="form-group">
+      <label for="name"> Marque Image</label>
+      <input type="email" class="form-control" id="mrqimg" required email [(ngModel)]="users.mrqimg" 
+      name="mrqimg" #emailControl="ngModel">
+       <span class="help-block" *ngIf="emailControl.errors?.required && emailControl.touched">
+        Email is required
+      </span>
+      <span class="help-block" *ngIf="emailControl.errors?.email && emailControl.touched">
+        Email is Invalid
+      </span>
+    </div>
+   
+
+    <p *ngIf="f.invalid" style="left: 40%; position: relative;">vous devez remplir tous les champs</p>
+    <button type="submit" class="btn btn-success" >Submit</button>
+  </form>
+
+<br><br>
+<nav aria-label="breadcrumb" >
+    <ol class="breadcrumb " style="background-color: rgb(32, 43, 43); font-size: 20px;">
+      <li class="breadcrumb-item active" aria-current="page">Marque</li>
+    </ol>
+  </nav>
+<div class=" md-form form-sm form-2 pl-0" style="background-color: rgb(245, 236, 244);">
+    <br><h1 style="text-align: center;">List des marque :</h1><br>
+    <div class="container">
+        <div class="row row-cols-sm-4">
+          <div  class="col-sm" *ngFor="let mrq of marquetst | async ; let i=index " >
+            
+            <img [src]="mrq.mrqimg" alt="" style="border-style: solid;border-width: 1px; display: block;
+            margin-left: auto; width: 100%;
+            margin-right: auto" routerLink="/telephonetst" (click)="fcp(mrq.id)">
+            
+            <p>{{mrq.name}}--{{mrq.id}}</p>
+      <div class="form-group">
+      <label for="name">Last Name</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="mrq.name" name="name">
+    </div>
+
+    <div class="form-group">
+      <label for="name">First Name</label>
+      <input type="text" class="form-control" id="mrqimg" required [(ngModel)]="mrq.mrqimg" name="mrqimg">
+    </div>
+
+    <button type="submit" class="btn btn-success" (click)="putmarq(mrq.id,mrq)">changer</button>
+            <button class="btn btn-danger" (click)="deleteMrq(mrq.id,mrq.name)" >Delete</button>
+              <div  style=" height: 30px;"></div>
+           <!--  <div *ngIf="(i+1)%4==0" style="width: 100px; height: 20px; background-color: blue;"></div> -->
+        
+          </div>
+        </div>
+      </div>
+      
+     
+    <br><br>
+  </div>
+ <h1 class="text-center">Rechercher</h1>
+ <div class="text-center">
+  <input type="text"  [(ngModel)]="name" name="name">
+<button (click)="chercher()">search</button> 
+</div>
+<br><br>
+<div class="container">
+  <div class="row row-cols-sm-4">
+    <div  class="col-sm" *ngFor="let mrq of users  " >
+      
+      <img [src]="mrq.mrqimg" alt="" style="border-style: solid;border-width: 1px; display: block;
+      margin-left: auto; width: 100%; margin-right: auto" >
+        <div  style=" height: 30px;"></div>
+       </div>
+  </div>
+</div>
+ <br>
+
+  <br><br><br>
+</section>
+</section>
+

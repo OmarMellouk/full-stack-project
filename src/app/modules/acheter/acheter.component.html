@@ -1,0 +1,124 @@
+<section class="container">
+    <hr>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li  class="breadcrumb-item"><a  routerLink="/" (click)="chcolor()" style="text-decoration: none;">Accueill</a></li>
+          <li class="breadcrumb-item active" aria-current="page" >Tous nos smartphones reconditionnés</li>
+        </ol>
+      </nav>
+      <hr>
+      <br>
+</section>
+
+<section class="container ">
+    <div class="container" >
+        <div class="row" style="font-size: 13px;">
+          <div class=" col" style="box-shadow: inset 0 0 0em gold, 0 0 1em rgb(155, 149, 149);">
+             <img src="../../assets/imgs/ach1.svg" style="height: 70px; width: 70px;" alt=""> Satisfait ou remboursé*
+          </div>
+          <div class=" col" style="box-shadow: inset 0 0 0em gold, 0 0 1em rgb(155, 149, 149);">
+             <img src="../../assets/imgs/ach2.svg" style="height: 70px; width: 70px;" alt=""> Garantie de 6 mois
+          </div>
+          <div class=" col" style="box-shadow: inset 0 0 0em gold, 0 0 1em rgb(155, 149, 149);">
+             <img src="../../assets/imgs/ach3.svg" style="height: 70px; width: 70px;" alt=""> 100 boutiques à votre service
+          </div>
+          <div class=" col" style="box-shadow: inset 0 0 0em gold, 0 0 1em rgb(155, 149, 149);">
+             <img src="../../assets/imgs/ach4.svg" style="height: 70px; width: 70px;" alt=""> Livraison 24/48h
+          </div>
+        </div>
+      </div>
+      <br><br>
+</section>
+
+<section id="section" class="container " style=" width: 100%;
+background-color: white; box-shadow: inset 0 0 0em gold, 0 0 1em rgb(155, 149, 149);" >
+<div class="container">
+    <div class="row justify-content-between" style="font-size: 1.2em;">
+        <div class="col-6">
+            DÉCOUVREZ TOUS NOS APPAREILS RECONDITIONNÉS
+        </div>
+        <div id="idf1" class="col-3" (click)="fncfltr()">
+          <a  style="text-decoration: none; color: orangered;">AFFICHER LES FILTRES</a>
+          <img src="../../assets/imgs/filtre.png" alt="">
+        </div>
+      </div>
+</div>
+<br>
+<div id="idf2" style="visibility: hidden;">
+<div class="container bg-dark" style="color: white;">
+  <div class="row">
+    <div class="col-sm">
+      <div class="form-check">
+        <input id="inpch" class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios0" value="option0"
+        (click)="cherchfiltrNone()" checked>
+        <label class="form-check-label" for="exampleRadios0">
+          NONE
+        </label>
+        
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+        (click)="cherchfiltr()">
+        <label class="form-check-label" for="exampleRadios1">
+          ALL
+        </label>
+        
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2"
+        (click)="cherchfiltrAPPLE()">
+        <label class="form-check-label" for="exampleRadios2">
+          APPLE
+        </label>
+              </div>
+    </div>
+    <div class="col-sm">
+      <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3"
+        (click)="cherchfiltrSAMSUNG()">
+        <label class="form-check-label" for="exampleRadios3">
+          SAMSUNG
+        </label>
+              </div>
+    </div>
+   <!--  <div class="col-sm">
+      <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4"
+        (click)="cherchfiltr()">
+        <label class="form-check-label" for="exampleRadios4">
+          ALL
+        </label>
+              </div>
+    </div>
+    <div class="col-sm">
+      <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios5" value="option5"
+        (click)="cherchfiltr()">
+        <label class="form-check-label" for="exampleRadios5">
+          ALL
+        </label>
+              </div>
+    </div> -->
+  </div>
+</div>
+<div class=" md-form form-sm form-2 pl-0" style="background-color: rgb(245, 236, 244);">
+    <br><br>
+    <div class="container">
+      <div class="row row-cols-sm-4">
+       
+           <div  class="col-sm" *ngFor="let mrq of users2  " >
+          
+            <img [src]="mrq.telimg" alt="" style="border-style: solid;border-width: 1px; display: block;
+            margin-left: auto; width: 100%; margin-right: auto" >
+              <div  style=" height: 30px;"></div>
+             </div>
+      </div>
+    </div>
+    <br><br><br><br>
+  </div>
+</div>
+</section>

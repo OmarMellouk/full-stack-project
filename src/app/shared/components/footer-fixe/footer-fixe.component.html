@@ -1,0 +1,50 @@
+<button id="btn1"  class="font-weight-bolder bg-dark fixed-bottom animated slideInUp" style="border-radius: 25px; color: white;
+ width: 100px; height: 40px; bottom: 40px; left: 30px; " >
+  &nbsp; <i class="far fa-question-circle"></i>&nbsp;Aide</button>
+
+  
+  <form id="form1" class="fixed-bottom  " style="border-radius: 25px; background-color: white;
+  bottom: 40px; width: 400px;
+  left: 30px; visibility: hidden;" >
+
+  <div class="container" style="background-color: black; color: white; border-top-left-radius: 25px;
+  border-top-right-radius: 25px;">
+    <div class="row">
+      <div class="col">
+       
+      </div>
+      <div class="col-8 font-weight-bolder"><br>
+        message
+      </div>
+      <div id="h1" type="button" class="col" style="font-size: 40px;">
+        -
+      </div>
+    </div>
+  </div>
+  
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword2">Files</label>
+      <input type="file" class="form-control" id="exampleInputPassword2" multiple>
+    </div>
+    <div class="text-center">
+    <button type="submit" class="btn btn-primary bg-dark">Submit</button>
+  </div>
+  </form>
+  <div class="navbar-right bg-dark font-weight-bolder border border-warning w-25 text-center" 
+  style="position: fixed; bottom: 40px; right: 30px; 
+  z-index: 100;border-radius: 25px; ">
+    <p style="color: white; font-size: 20px; transform: translateY(25%);">vous êtes connecté depuis {{hr}} : {{min}} : {{sec}}</p>
+  </div>

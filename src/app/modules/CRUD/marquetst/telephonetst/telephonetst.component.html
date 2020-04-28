@@ -1,0 +1,77 @@
+<section id="section" class="container " style=" width: 100%;
+background-color: white; box-shadow: inset 0 0 0em gold, 0 0 1em rgb(155, 149, 149);" >
+<section class="container w-75">
+<br><br>
+  <form (ngSubmit)="addTel()">
+    
+<h1 class="text-center">Ajouter</h1>
+    <div class="form-group">
+      <label for="name"> Name</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="users.name" name="name">
+    </div>
+
+    <div class="form-group">
+      <label for="name"> Telephone Image</label>
+      <input type="text" class="form-control" id="telimg" required [(ngModel)]="users.telimg" name="telimg">
+    </div>
+
+    <button type="submit" class="btn btn-success" >Ajouter</button>
+  </form>
+
+<br><br>
+
+
+<div class=" md-form form-sm form-2 pl-0" style="background-color: rgb(245, 236, 244);">
+    <br><h1 style="text-align: center;">List des Telephones :</h1><br>
+    <div class="container">
+        <div class="row row-cols-sm-4">
+          
+          <div  class="col-sm" *ngFor="let tel of telephonetst | async  " >
+            
+            <img [src]="tel.telimg" alt="" style="border-style: solid;border-width: 1px; display: block;
+            margin-left: auto; width: 100%;
+            margin-right: auto" >
+           
+      <div class="form-group">
+      <label for="name">Last Name</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="tel.name" name="name">
+    </div>
+
+    <div class="form-group">
+      <label for="name">First Name</label>
+      <input type="text" class="form-control" id="telimg" required [(ngModel)]="tel.telimg" name="telimg">
+    </div>
+
+    <button type="submit" class="btn btn-success" (click)="putTel(tel.id,tel)">changer</button>
+            <button class="btn btn-danger" (click)="deleteTel(tel.id,tel.name)" >Delete</button>
+              <div  style=" height: 30px;"></div> 
+          
+          </div>
+        </div>
+      </div>
+      
+     
+    <br><br>
+  </div>
+<hr><hr>
+  <h1 class="text-center">Rechercher</h1>
+ <div class="text-center">
+  <input type="text"  [(ngModel)]="name" name="name">
+<button (click)="chercherTel()">search</button> 
+</div>
+<br><br>
+<div class="container">
+  <div class="row row-cols-sm-4">
+    <div  class="col-sm" *ngFor="let mrq of users  " >
+      
+      <img [src]="mrq.telimg" alt="" style="border-style: solid;border-width: 1px; display: block;
+      margin-left: auto; width: 100%; margin-right: auto" >
+        <div  style=" height: 30px;"></div>
+       </div>
+  </div>
+</div>
+ <br>
+
+  <br><br><br>
+</section>
+</section>

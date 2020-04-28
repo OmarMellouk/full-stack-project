@@ -1,0 +1,64 @@
+<section id="section" class="container " style=" width: 100%;
+background-color: white; box-shadow: inset 0 0 0em gold, 0 0 1em rgb(155, 149, 149);" >
+<section class="container w-75">
+
+<br><br>
+<nav aria-label="breadcrumb" >
+    <ol class="breadcrumb " style="background-color: rgb(32, 43, 43); font-size: 20px;">
+      <li class="breadcrumb-item"><a href="javascript:history.go(-2)">Marque</a></li>
+      <li class="breadcrumb-item"><a href="javascript:history.go(-1)">Modele</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Panne</li>
+    </ol>
+  </nav>
+<div class=" md-form form-sm form-2 pl-0" style="background-color: rgb(245, 236, 244);">
+    <br><h4 style="text-align: center;">Que voulez-vous réparer ?</h4><br>
+   
+    <div class="container">
+        <div class="row">
+          
+          <div class="col-sm-5">
+            <img [src]="tel" alt="allll" style="width: 100%; display: block; 
+            margin-left: auto;
+            margin-right: auto">
+          </div>
+          <div class="col-sm">
+            <div class="form-check" >
+                <input class="form-check-input" type="checkbox"  id="e1" value="option1" (click)="change1()">
+                <label class="form-check-label" for="e1">
+
+                  Default radio
+                </label>
+              </div>
+              <hr>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox"  id="e2" value="option1" (click)="change2()">
+                <label class="form-check-label" for="e2">
+                  Default radio
+                </label>
+              </div>
+              <hr>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox"  id="e3" value="option1" (click)="change3()">
+                <label class="form-check-label" for="e3">
+                  Default radio
+                </label>
+              </div>
+              <hr>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox"  id="e4" value="option1" (click)="change4()">
+                <label class="form-check-label" for="e4">
+                  Default radio
+                </label>
+              </div><hr>
+            <br><br><br>
+            <button id="b1" routerLink="/devis" style="background-color: orangered; border-radius: 30px;
+            width: 250px;height: 50px; color: white; font-size: 30px;" *ngIf="s!=-4">continue</button>
+          </div>
+        </div>
+      </div>
+     
+    <br><br>
+  </div>
+</section>
+</section>
+
